@@ -4,7 +4,7 @@
   import IconButton, { Icon } from '@smui/icon-button';
   import List, { Item, Text } from '@smui/list';
   import TopAppBar, { AutoAdjust, Row, Section, Title } from '@smui/top-app-bar';
-  import { asset } from '$app/paths';
+  import { asset, resolve } from '$app/paths';
   import { page } from '$app/state';
   import favicon from '$lib/assets/favicon.svg';
 
@@ -13,7 +13,7 @@
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/mod-boxes', label: 'Mod Boxes' },
-  ];
+  ] as const;
 
   let { children } = $props();
 </script>
@@ -41,7 +41,7 @@
   <Content>
     <List>
       {#each navItems as item}
-        <Item href={item.href} onclick={() => drawerOpen = false}>
+        <Item href={resolve(item.href)} onclick={() => drawerOpen = false}>
           <Text>{item.label}</Text>
         </Item>
       {/each}
@@ -59,7 +59,7 @@
         <Title>Minty Love</Title>
         <nav class="mobile-hide">
           {#each navItems as item}
-            <a href={item.href} class:active={page.url.pathname === item.href}>{item.label}</a>
+            <a href={resolve(item.href)} class:active={page.url.pathname === resolve(item.href)}>{item.label}</a>
           {/each}
         </nav>
       </Section>
