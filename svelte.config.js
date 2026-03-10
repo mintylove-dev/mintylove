@@ -4,12 +4,12 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
   kit: {
     adapter: adapter({
-      fallback: '404.html'
+      fallback: '404.html',
     }),
     // only need to set the base path if deploying to a sub-url e.g. https://username.github.io/reponame
-    // paths: {
-    //   base: process.argv.includes('dev') ? undefined : process.env.BASE_PATH,
-    // },
+    paths: {
+      base: process.argv.includes('dev') ? undefined : process.env.BASE_PATH,
+    },
   }
 };
 
