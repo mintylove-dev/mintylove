@@ -1,0 +1,37 @@
+{
+  "name": "mintylove",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync && npm run smui-theme-light && npm run smui-theme-dark || echo ''",
+    "smui-theme-light": "smui-theme compile static/smui.css -i src/theme",
+    "smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "@mdi/js": "^7.4.47",
+    "@smui/button": "^8.0.3",
+    "@smui/card": "^8.0.3",
+    "@smui/drawer": "^8.0.3",
+    "@smui/form-field": "^8.0.3",
+    "@smui/icon-button": "^8.0.3",
+    "@smui/layout-grid": "^8.0.3",
+    "@smui/list": "^8.0.3",
+    "@smui/select": "^8.0.3",
+    "@smui/textfield": "^8.0.3",
+    "@smui/top-app-bar": "^8.0.3",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.50.2",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "smui-theme": "^8.0.3",
+    "svelte": "^5.51.0",
+    "svelte-check": "^4.4.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}
