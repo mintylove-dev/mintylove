@@ -4,6 +4,7 @@
   import IconButton, { Icon } from '@smui/icon-button';
   import List, { Item, Text } from '@smui/list';
   import TopAppBar, { AutoAdjust, Row, Section, Title } from '@smui/top-app-bar';
+  import { asset } from '$app/paths';
   import { page } from '$app/state';
   import favicon from '$lib/assets/favicon.svg';
 
@@ -23,8 +24,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 
   <!-- SMUI Styles -->
-  <link rel="stylesheet" href="%sveltekit.assets%/smui.css" media="(prefers-color-scheme: light)" />
-  <link rel="stylesheet" href="%sveltekit.assets%/smui-dark.css" media="screen and (prefers-color-scheme: dark)" />
+  <link rel="stylesheet" href={asset('/smui.css')} media="(prefers-color-scheme: light)" />
+  <link rel="stylesheet" href={asset('/smui-dark.css')} media="screen and (prefers-color-scheme: dark)" />
 
   <!-- Roboto, and Roboto Mono fonts -->
   <link
